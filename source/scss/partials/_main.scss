@@ -1,0 +1,37 @@
+.main-image {
+  height: 400px;
+  overflow: hidden;
+  border: 10px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 0;
+  img {
+    width: 100%;
+    opacity: 0.6;
+  }
+}
+.main-blocks {
+  .block {
+    box-sizing: border-box;
+    width: calc(100% / 3);
+    float: left;
+    height: 300px;
+    border: 10px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 1%;
+    &.no-border-right {
+      border-right: 0;
+    }
+  }
+}
+.main {
+  position: relative;
+}
+.main-name {
+  position: absolute;
+  bottom: 30px;
+  right: 5%;
+  div {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: #01877e;
+  }
+}

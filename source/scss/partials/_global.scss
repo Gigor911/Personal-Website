@@ -1,0 +1,73 @@
+@mixin transition {
+  transition: all ease 0.3s;
+}
+@mixin respond($class) {
+  @if $class == xs {
+    @media (max-width: 767px) { @content; }
+  }
+  @else if $class == sm {
+    @media (min-width: 768px) and (max-width: 991px) { @content; }
+  }
+  @else if $class == md {
+    @media (min-width: 992px) and (max-width: 1200px) { @content; }
+  }
+  @else if $class == lg {
+    @media (min-width: 1200px) and (max-width: 1601px) { @content; }
+  }
+}
+//Fonts
+* {
+  font-family: Raleway, sans-serif;
+  color: white;
+}
+html {
+  background: black;
+}
+body:after {
+  background: url("site-background.png");
+  background-size: cover;
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+}
+a {
+  @include transition;
+  &:hover {
+    @include transition;
+    color: #5f877f;
+  }
+}
+.clearfix {
+  &:after {
+    display: table-cell;
+    content: " ";
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  @include respond(xs) {
+    width: 90%;
+  }
+  @include respond(sm) {
+    width: 760px;
+  }
+  @include respond(md) {
+    width: 960px;
+  }
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
